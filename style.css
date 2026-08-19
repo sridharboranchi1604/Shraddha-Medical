@@ -3749,3 +3749,55 @@ textarea {
         min-width: 0;
     }
 }
+
+/* =========================================================
+   MOBILE GRID GAP FIX
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Keep each grid item independent */
+    .category-grid {
+        align-items: start !important;
+        grid-auto-rows: max-content !important;
+    }
+
+    .category-hover-wrap {
+        align-self: start !important;
+        height: max-content !important;
+    }
+
+    .category-card {
+        height: auto !important;
+        min-height: 92px;
+    }
+
+    /* Prevent hidden category panels from creating row height */
+    .category-product-panel {
+        margin-bottom: 0 !important;
+    }
+
+    /* Product grid */
+    .products-grid {
+        align-items: start !important;
+        grid-auto-rows: max-content !important;
+    }
+
+    .product-card {
+        height: auto !important;
+        align-self: start !important;
+    }
+}
+
+
+/* Smaller phones */
+@media (max-width: 390px) {
+
+    .category-grid {
+        row-gap: 8px !important;
+    }
+
+    .products-grid {
+        row-gap: 8px !important;
+    }
+}
