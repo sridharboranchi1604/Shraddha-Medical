@@ -1,0 +1,14 @@
+SHRADDHA MEDICAL SHOP - OWNER DASHBOARD
+
+1. Put admin.html, admin.css and admin.js in the same GitHub folder as your customer website.
+2. Keep firebase-config.js in that same folder (the included file uses your current Firebase project).
+3. Firebase Console -> Authentication -> Users -> copy the OWNER user's UID.
+4. Firestore Database -> Data -> Create collection: admins
+5. Document ID = the owner's UID.
+6. Add field: role (string) = owner
+7. Firestore Database -> Rules -> replace rules with firestore-rules.txt -> Publish.
+8. Open your site at /admin.html and sign in with the Firebase owner email/password.
+
+The dashboard shows live orders, customer details, medicines, totals, status controls, call and WhatsApp buttons.
+
+Do not put Firebase service-account private keys in the website.

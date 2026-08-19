@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owner Dashboard | Shraddha Medical Shop</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div id="loginView" class="login-view">
+  <div class="login-card">
+    <div class="brand-mark">✚</div>
+    <span class="eyebrow">OWNER ACCESS</span>
+    <h1>Shraddha Medical Shop</h1>
+    <p>Sign in to manage home-delivery orders.</p>
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="Owner email" required>
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="Password" required>
+      <button class="primary-btn" id="loginBtn">Sign In</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </div>
+</div>
+
+<div id="dashboardView" class="hidden">
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark small">✚</div>
+    <div><strong>Shraddha Medical Shop</strong><span>Owner Dashboard</span></div>
+  </div>
+  <div class="top-actions"><span id="ownerEmail"></span><button id="logoutBtn">Logout</button></div>
+</header>
+
+<main class="container">
+  <section class="welcome">
+    <div><span class="eyebrow">ORDER MANAGEMENT</span><h1>Incoming Orders</h1><p>View customers, medicines, totals and delivery status.</p></div>
+    <button id="refreshBtn" class="secondary">↻ Refresh</button>
+  </section>
+
+  <section class="stats">
+    <div><span>ALL ORDERS</span><b id="totalOrders">0</b></div>
+    <div><span>NEW</span><b id="newOrders">0</b></div>
+    <div><span>ACTIVE</span><b id="activeOrders">0</b></div>
+    <div><span>DELIVERED</span><b id="deliveredOrders">0</b></div>
+    <div><span>ORDER VALUE</span><b id="totalSales">₹0</b></div>
+  </section>
+
+  <section class="orders-box">
+    <div class="toolbar">
+      <div><span class="eyebrow">CUSTOMER ORDERS</span><h2>Orders</h2></div>
+      <div class="filters">
+        <input id="orderSearch" placeholder="Search order, name or phone">
+        <select id="statusFilter">
+          <option>All</option><option>New</option><option>Confirmed</option>
+          <option>Preparing</option><option>Out for Delivery</option>
+          <option>Delivered</option><option>Cancelled</option>
+        </select>
+      </div>
+    </div>
+    <div id="ordersContainer"><div class="loading">Loading orders...</div></div>
+  </section>
+</main>
+</div>
+
+<div id="orderModal" class="modal">
+  <div class="modal-card">
+    <div class="modal-head"><div><span class="eyebrow">ORDER DETAILS</span><h2 id="modalOrderId"></h2></div><button id="closeModal">×</button></div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>
